@@ -11,10 +11,22 @@ body {
 .app-container {
     .header-container {
         .navbar-nav {
+            z-index: 10;
             .nav-link {
                 &.active {
                     color: #ff0cf3;
                 }
+            }
+        }
+    }
+
+    .app-content {
+        .homepage-container {
+            video {
+                width: 500px;
+                position: fixed;
+                right: 80px;
+                bottom: 0;
             }
         }
     }

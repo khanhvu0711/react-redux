@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Admin from './component/User/Admin';
+import Admin from './component/Admin/Admin';
 import User from './component/User/User';
 import HomePage from './component/Home/HomePage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,9 +14,10 @@ root.render(
         <Routes>
             <Route path="/" element={<App />}>
                 <Route index element={<HomePage />} />
-                <Route path="/admin" element={<Admin />} />
+
                 <Route path="/user" element={<User />} />
             </Route>
+            <Route path="/admin" element={<Admin />} />
         </Routes>
     </BrowserRouter>,
     // </React.StrictMode>,
