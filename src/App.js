@@ -1,35 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
-import ClassComponent from './component/ClassComponent';
-import MyComponent from './component/MyComponent';
+import './App.scss';
+import Header from './component/Header/Header';
+import { Outlet, Link } from 'react-router-dom';
 
-function App() {
-    const [value, setValue] = useState(0);
-
+const App = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                    <ClassComponent />
-                    <MyComponent />
-                </p>
-                <div>Count = {value}</div>
-                <button onClick={() => setValue(value + 1)}>Increase</button>
-                <button onClick={() => setValue(value - 1)}>Decrease</button>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+        <div className="app-container">
+            <div className="header-container">
+                <Header />
+            </div>
+            <div className="main-container">
+                <div className="sidenav-container"></div>
+            </div>
+            <div className="app-content">
+                <Outlet />
+            </div>
         </div>
     );
-}
+};
 
 export default App;
